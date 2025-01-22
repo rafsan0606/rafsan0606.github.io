@@ -1,0 +1,72 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(0deg, rgb(0 0 0 / 70%), rgb(0 0 0 / 40%)), url(./assets/bg2.jpg) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.title {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    padding: 10px 20px;
+}
+
+.card {
+    padding: 20px;
+    background: #ffffff17;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    min-width: 80px;
+    text-align: center;
+    border: 1px solid #ffffff17;
+}
+
+.time-count {
+    font-size: 60px;
+}
+
+.label {
+    font-size: 16px;
+    text-align: center;
+}
+
+.label::before {
+    content: '';
+    width: 25px;
+    height: 1px;
+    display: block;
+    background: #ffffff36;
+    margin: 10px auto;
+}
+
+img.timer-icon {
+    width: 90px;
+}

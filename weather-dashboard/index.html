@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/cd45047810.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/adapters/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script> 
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>-->
+    
+</head>
+<body>
+    <header class="header container">
+        <div class="container-heading">
+            <h2>Weather Dashboard</h2>
+            <h6><i class="fa-solid fa-location-dot"></i> Tampere</h6>
+        </div>
+        <div class="readings-toggle">
+            <nav>
+                <ul>
+                    <li><a href="#" id="tempBtn" class="active"><i class="fa-solid fa-temperature-three-quarters"></i> Temperature</a></li>
+                    <li><a href="#" id="humidityBtn"><i class="fa-solid fa-droplet"></i> Humidity</a></li>
+                    <li><a href="#" id="windBtn"><i class="fa-solid fa-wind"></i> Wind Speed</a></li>
+                </ul>
+            </nav>
+
+        </div>
+        
+    </header>
+
+    <div class="container weather-container">
+        <div id="dataDisplay" class="data-container">
+
+            <div class="readings">
+                <table id="readingTable"></table>
+            </div>
+            
+            <div class="chart-statistic-container">
+                <div id="chartContainer" class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="statistic-container">
+                    <h4 class="stat-heading">Statistical Information of Past 7 Days</h4>
+                    <div id="statisticalInfo" class="statistic-data">
+                        <div id="humidityStats" class="humidity">
+                            <h5><i class="fa-solid fa-droplet"></i> Humidity</h5>
+                            <ul class="stat-list">
+                                <li><strong>Mean:</strong> <span id="humidityMean"></span></li>
+                                <li><strong>Median:</strong> <span id="humidityMedian"></span></li>
+                                <li><strong>Mode:</strong> <span id="humidityMode"></span></li>
+                                <li><strong>Range:</strong> <span id="humidityRange"></span></li>
+                                <li><strong>Standard Deviation:</strong> <span id="humiditySD"></span></li>
+                                <li><strong>Min:</strong> <span id="humidityMin"></span></li>
+                                <li><strong>Max:</strong> <span id="humidityMax"></span></li>
+                            </ul>
+                        </div>
+                        <div id="windStats" class="wind-speed">
+                            <h5><i class="fa-solid fa-wind"></i> Wind Speed</h5>
+                            <ul class="stat-list">
+                                <li><strong>Mean:</strong> <span id="windMean"></span></li>
+                                <li><strong>Median:</strong> <span id="windMedian"></span></li>
+                                <li><strong>Mode:</strong> <span id="windMode"></span></li>
+                                <li><strong>Range:</strong> <span id="windRange"></span></li>
+                                <li><strong>Standard Deviation:</strong> <span id="windSD"></span></li>
+                                <li><strong>Min:</strong> <span id="windMin"></span></li>
+                                <li><strong>Max:</strong> <span id="windMax"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Weather and 3-Hour Forecast</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cd45047810.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container" class="background-moderate">
+        <div id="current-weather-container" >
+            <div class="refresh-container">
+                <button class="btn" id="refresh-button" onclick="refreshPage()"><i class="fa-solid fa-rotate-right"></i> Refresh</button>
+            </div>
+            
+            <div class="city-container">
+                <h2 class="city-name">Tampere <i class="fa-solid fa-location-dot"></i></h2>
+            </div>
+            <div class="temperature-data-container">
+                <div id="weather-icon"></div>
+                <div id="temperature-container">
+                    <h3 id="temperature"></h3>
+                </div>
+            </div>
+            
+            <div id="weather-description-container">
+                <h3 id="weather-description"></h3>
+            </div>
+
+            <div class="stat-container">
+
+                <div class="min-max-container stat-child-container">
+                    <div id="temp-min-container">
+                        <h3 id="temp-min"></h3>
+                    </div>
+                    <div id="temp-max-container">
+                        <h3 id="temp-max"></h3>
+                    </div>
+                </div>
+
+                <div id="feels-like-container" class="stat-child-container">
+                    <h3 id="feels-like"></h3>
+                </div>
+                
+                <div id="humidity-container" class="stat-child-container">
+                    <h3 id="humidity"></h3>
+                </div>
+                
+                <div id="wind-speed-container" class="stat-child-container">
+                    <h3 id="wind-speed"></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="hourly-header">
+            <h2>Hourly Forecast</h2>
+        </div>
+
+        <div id="forecast-container">
+        </div>
+    </div>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

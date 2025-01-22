@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown timer</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+        <img src="./assets/timer.png" alt="" class="timer-icon">
+
+        <div class="title">Time Remaining Until Summer Break.</div>
+
+        <div class="countdown">
+            <div class="days-container card">
+                <div id="days" class="time-count">00</div>
+                <div class="label">Days</div>
+            </div>
+
+            <div class="hours-container card">
+                <div id="hours" class="time-count">00</div>
+                <div class="label">Hours</div>
+
+            </div>
+
+            <div class="minutes-container card">
+                <div id="minutes" class="time-count">00</div>
+                <div class="label">Minutes</div>
+
+            </div>
+            
+            <div class="seconds-container card">
+                <div id="seconds" class="time-count">00</div>
+                <div class="label">Seconds</div>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+
+    <script src="./script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Game</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <img src="./assets/multiplication-sign.png" alt="" class="icon">
+        <h1>Multiplication Game</h1>
+        <div id="expressions"></div>
+        <div id="feedback"></div>
+        <div class="all-buttons">
+            <div class="button-container">
+                <button onclick="checkAnswers()">Check</button>
+                <button onclick="resetGame()">Reset</button>
+                <button onclick="showAnswers()">Show</button>
+            </div>
+            <div class="reload-container">
+                <button onclick="reloadPage()">Play Again!</button>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
