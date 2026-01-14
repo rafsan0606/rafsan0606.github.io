@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  backend:
+    image: ${BACKEND_IMAGE}
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://lgtm:4318
+      OTEL_TRACES_EXPORTER: otlp
+      OTEL_METRICS_EXPORTER: otlp
+      OTEL_LOGS_EXPORTER: otlp
+      OTEL_SERVICE_NAME: backend_service
+    networks:
+      - default
+      - observability
+    restart: on-failure
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+  frontend:
+    image: ${FRONTEND_IMAGE}
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+    restart: always
+
+networks:
+  observability:
+    external: true

@@ -1,0 +1,42 @@
+{
+	"name": "express-api-starter",
+	"type": "module",
+	"version": "2.0.0",
+	"description": "A basic starter for an express.js API",
+	"author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/w3cj/express-api-starter.git"
+	},
+	"keywords": [],
+	"main": "src/index.js",
+	"scripts": {
+		"start": "node src/index.js",
+		"dev": "node --watch src/index.js",
+		"lint": "biome check --fix ./src",
+		"test": "vitest run",
+		"build": "echo 'No build step needed for Node.js backend'"
+	},
+	"dependencies": {
+		"@opentelemetry/auto-instrumentations-node": "^0.67.0",
+		"@opentelemetry/exporter-metrics-otlp-proto": "^0.208.0",
+		"@opentelemetry/exporter-trace-otlp-proto": "^0.208.0",
+		"@opentelemetry/sdk-metrics": "^2.2.0",
+		"@opentelemetry/sdk-node": "^0.208.0",
+		"cors": "^2.8.5",
+		"dotenv": "^17.2.3",
+		"dotenv-flow": "^4.1.0",
+		"express": "^5.1.0",
+		"helmet": "^8.1.0",
+		"mongoose": "^8.19.1",
+		"morgan": "^1.10.0",
+		"pm2": "^6.0.13",
+		"zod": "^3.25.67"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.4",
+		"supertest": "^7.1.1",
+		"vitest": "^3.2.4"
+	}
+}
