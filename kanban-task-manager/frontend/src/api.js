@@ -1,9 +1,10 @@
 import axios from "axios";
 
 // Construct base API URL from environment variables
-const host = import.meta.env.VITE_API_HOST || "172.16.7.219";
-const port = import.meta.env.VITE_API_PORT || "3000";
-const API_BASE = `http://${host}:${port}/api`;
+const host = import.meta.env.VITE_API_HOST || "localhost";
+const port = import.meta.env.VITE_API_PORT ? `:${import.meta.env.VITE_API_PORT}` : "";
+const protocol = import.meta.env.VITE_API_PROTOCOL || "http";
+const API_BASE = `${protocol}://${host}${port}/api`;
 
 export const getTasks = () => axios.get(`${API_BASE}/tasks`);
 export const getTaskById = (id) => axios.get(`${API_BASE}/tasks/${id}`);
