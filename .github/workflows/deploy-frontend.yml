@@ -1,0 +1,43 @@
+name: Deploy Frontend to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'kanban-task-manager/frontend/src/**'
+      - 'kanban-task-manager/frontend/package.json'
+      - 'kanban-task-manager/frontend/vite.config.js'
+      - 'kanban-task-manager/frontend/.env.production'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: cd kanban-task-manager/frontend && npm install
+
+      - name: Build for production
+        run: cd kanban-task-manager/frontend && npm run build:prod
+
+      - name: Copy dist files to frontend root
+        run: |
+          cd kanban-task-manager/frontend
+          cp -r dist/* .
+          rm -rf dist
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          cd kanban-task-manager/frontend
+          git add assets/ index.html
+          git commit -m "Auto-deploy: Build frontend [skip ci]" || echo "No changes to commit"
+          git push
