@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -40,4 +42,6 @@ jobs:
           cd kanban-task-manager/frontend
           git add assets/ index.html
           git commit -m "Auto-deploy: Build frontend [skip ci]" || echo "No changes to commit"
-          git push
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
