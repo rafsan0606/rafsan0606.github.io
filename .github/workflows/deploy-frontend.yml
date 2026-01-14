@@ -20,6 +20,13 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Create .env.production from secrets
+        run: |
+          cd kanban-task-manager/frontend
+          echo "VITE_API_HOST=${{ secrets.VITE_API_HOST }}" > .env.production
+          echo "VITE_API_PORT=" >> .env.production
+          echo "VITE_API_PROTOCOL=${{ secrets.VITE_API_PROTOCOL }}" >> .env.production
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
