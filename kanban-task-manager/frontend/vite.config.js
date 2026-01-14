@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
 
 	return {
 		plugins: [react(), tailwindcss()],
-		base: "/kanban-task-manager/frontend/dist/",
+		base: "/kanban-task-manager/frontend/",
 		server: {
 			proxy: {
 				"/api": `http://${host}:${port}`,
