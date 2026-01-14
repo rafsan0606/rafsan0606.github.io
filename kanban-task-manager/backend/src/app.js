@@ -18,28 +18,9 @@ app.use(express.json());
 
 app.get("/", (_req, res) => {
 	res.json({
-		message: "🦄🌈✨👋🌎🌍🌏✨🌈🦄",
+		message: "Kanban Task Manager API",
 	});
 });
-
-app.get("/crashDB", async (req, res) => {
-  try {
-    await mongoose.connection.close();
-    console.log("💥 MongoDB connection closed intentionally via /crashDB");
-    res.status(200).send("MongoDB connection closed — app will now fail readiness checks.");
-  } catch (err) {
-    console.error("Error closing MongoDB connection:", err);
-    res.status(500).send("Failed to close MongoDB connection");
-  }
-});
-
-
-app.get("/crash", (req, res) => {
-  res.send("💥 Crashing now...");
-  console.log("Simulating crash...");
-  setTimeout(() => process.exit(1), 3000);
-});
-
 
 app.get("/health", (_req, res) => {
   res.status(200).send("OK");
