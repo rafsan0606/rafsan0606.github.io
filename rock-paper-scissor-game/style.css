@@ -1,0 +1,82 @@
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+.container {
+    display: flex;
+    gap: 60px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f9fbff;
+    width: 765px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #ebeff8;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.hero-container .col-1 {
+    flex: 1;
+}
+
+.hero-container .col-2 {
+    flex: 2;
+}
+
+.hero-container .col-3 {
+    flex: 1;
+}
+
+.col-2 {
+    text-align: center;
+}
+
+.col-3 {
+    text-align: end;
+}
+
+h4#result-text {
+    text-align: center;
+}
+
+.result {
+    width: 200px;
+}
+
+.move-container {
+    display: flex;
+    justify-content: center;
+}
+
+.move {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+    border: 1px solid;
+}
+
+.pick-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pick-icon {
+    height: 50px;
+}

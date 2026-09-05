@@ -1,0 +1,87 @@
+let score = JSON.parse(fetchScore());
+
+if (score === null) {
+        score = {
+        wins: 0,
+        losses: 0,
+        draw: 0
+    }
+}
+
+document.querySelector('#wins').textContent = score.wins;
+document.querySelector('#losses').textContent = score.losses;
+document.querySelector('#draw').textContent = score.draw;
+
+console.log(score);
+
+function fetchScore() {
+    return localStorage.getItem('score');
+}
+
+function updateScore() {
+    document.querySelector('#wins').textContent = score.wins;
+    document.querySelector('#losses').textContent = score.losses;
+    document.querySelector('#draw').textContent = score.draw;
+}
+
+function saveScore() {
+    localStorage.setItem('score', JSON.stringify(score));
+    updateScore();
+}
+
+function getRandomMove() {
+    return Math.floor(Math.random() * 3);
+}
+
+function startGame(playerInput) {
+    playerMove = playerInput;
+
+    let randomMove = getRandomMove();
+    if (randomMove == 0) {
+        computerMove = 'Rock'
+    } else if (randomMove == 1) {
+        computerMove = 'Paper'
+    } else {
+        computerMove = 'Scissors'
+    }
+
+    document.querySelector('#computer-pick').textContent = computerMove;
+    document.querySelector('#player-pick').textContent = playerMove;
+
+
+    if (playerMove == 'Rock' && computerMove == 'Paper') {
+    result = `Computer won`;
+    } else if (playerMove == 'Rock' && computerMove == 'Scissors') {
+        result = `Player won`;
+    } else if (playerMove == 'Paper' && computerMove == 'Rock') {
+        result = `Player won`;
+    } else if (playerMove == 'Paper' && computerMove == 'Scissors') {
+        result = `Computer won`;
+    } else if (playerMove == 'Scissors' && computerMove == 'Rock') {
+        result = `Computer won`;
+    } else if (playerMove == 'Scissors' && computerMove == 'Paper') {
+        result = `Player won`;
+    } else {
+        result = `It's a draw!`;
+    }
+
+    if (result == `Player won`) {
+        score.wins += 1;
+    } else if (result == `Computer won`) {
+        score.losses += 1;
+    } else {
+        score.draw += 1;
+    }
+
+    document.querySelector('#result-text').innerText = result;
+    saveScore();
+}
+
+function resetScore() {
+    localStorage.removeItem('score');
+    score.wins = 0;
+    score.losses = 0;
+    score.draw = 0;
+    updateScore();
+}
+
