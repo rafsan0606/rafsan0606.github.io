@@ -6,6 +6,14 @@ body {
     justify-content: center;
     padding: 20px;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+.heading {
+    font-size: 18px;
+    text-align: center;
+}
 .container {
     display: flex;
     gap: 60px;
@@ -15,11 +23,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #f9fbff;
-    width: 765px;
+    background: #fffdf9;
+    width: 540px;
     padding: 20px;
     border-radius: 20px;
-    border: 1px solid #ebeff8;
+    border: 1px solid #ffe5a4;
+    gap: 15px;
 }
 
 .hero-container {
@@ -46,7 +55,39 @@ body {
 }
 
 .col-3 {
-    text-align: end;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reset-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 5px;
+    background: #ffffff;
+    border: 1px solid #efefef;
+    box-shadow: 0px 2px 0px 0px #dfdfdf;
+    cursor: pointer;
+    transition: ease-out 0.1s;
+}
+
+.reset-button:hover {
+    background: #fff9ea;
+    box-shadow: 0px 2px 0px 0px rgb(255 192 35);
+    border-color: #ffebbb;
+    transition: ease-out 0.05s;
+}
+
+.reset-button:active {
+    translate: 0px 2px;
+    box-shadow: none;
+    transition: ease-out 0.07s;
+}
+
+.reset-button img {
+    height: 20px;
 }
 
 h4#result-text {
@@ -64,10 +105,29 @@ h4#result-text {
 
 .move {
     display: flex;
+    width: 115px;
     flex-direction: column;
-    width: 200px;
     align-items: center;
-    border: 1px solid;
+    gap: 10px;
+    padding: 10px;
+    background: #ffc023;
+    border: 1px solid #efefef;
+    border-radius: 15px;
+}
+
+.move img {
+    filter: brightness(0) invert(1);
+}
+
+.move h5 {
+    color: #fff;
+}
+
+.vs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
 }
 
 .pick-container {
@@ -75,8 +135,80 @@ h4#result-text {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+}
+
+.pick-button {
+    display: flex;
+    width: 110px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #efefef;
+    border-radius: 15px;
+    box-shadow: 0px 3px 0px 0px #dfdfdf;
+    cursor: pointer;
+    transition: ease-out 0.1s;
+}
+
+.pick-button:hover {
+    background: #fff9ea;
+    box-shadow: 0px 3px 0px 0px rgb(255 192 35);
+    border-color: #ffebbb;
+    transition: ease-out 0.05s;
+}
+
+.pick-button:active {
+    translate: 0px 3px;
+    box-shadow: none;
+    transition: ease-out 0.07s;
 }
 
 .pick-icon {
-    height: 50px;
+    height: 45px;
+}
+
+.show-picked-icon {
+    height: 70px;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+table {
+    width: 340px;
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #ffc023;
+    border-style: solid;
+
+}
+
+table td {
+    border-width: 2px;
+    border-color: #ffc023;
+    border-style: solid;
+    padding: 5px;
+    text-align: center;
+
+}
+
+table th {
+    border-width: 2px;
+    border-color: #ffc023;
+    border-style: solid;
+    padding: 5px;
+    text-align: center;
+    color: #ffffff;
+}
+
+table thead {
+    background-color: #ffc023;
 }

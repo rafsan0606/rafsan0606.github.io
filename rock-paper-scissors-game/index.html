@@ -12,43 +12,63 @@
                     <h2>Rock - Paper - Scissors</h2>
                 </div>
                 <div class="col-3">
-                    <button onclick="resetScore()">Reset Score</button>
+                    <button onclick="resetScore()" class="reset-button">
+                        <img src="./assets/reload.png" alt="">Reset</button>
                 </div>
-
-
             </div>
 
-            <h4 id="result-text">Ready to play?</h4>
+            <h4 id="result-text" class="heading">Ready to play?</h4>
             <div class="move-container">
                 <div class="move">
-                    <img src="" alt="" id="player-pick">
+                    <img src="" alt="" id="player-pick" class="show-picked-icon">
                     <h5>You</h5>
                 </div>
+                <div class="vs-container">
+                    <h2>VS</h2>
+                </div>
                 <div class="move">
-                    <img src="" alt="" id="computer-pick">
+                    <img src="" alt="" id="computer-pick" class="show-picked-icon">
                     <h5>Computer</h5>
                 </div>
             </div>
+
             <div class="pick-container">
-                <button onclick="startGame('Rock')">
+                <button onclick="startGame('Rock')" class="pick-button">
                     <img src="./assets/rock.png" alt="" class="pick-icon">
                     Rock</button>
-                <button onclick="startGame('Paper')">
+                <button onclick="startGame('Paper')" class="pick-button">
                     <img src="./assets/paper.png" alt="" class="pick-icon">
                     Paper</button>
-                <button onclick="startGame('Scissors')">
+                <button onclick="startGame('Scissors')" class="pick-button">
                     <img src="./assets/scissors.png" alt="" class="pick-icon">
                     Scissors</button>
             </div>
-            <h5>Pick a move</h5>
+
+            <h5 class="heading">Pick a move</h5>
 
             <div class="score-container">
-            <div class="score">
-                <h5>Wins: <span id="wins"></span></h5>
-                <h5>Losses: <span id="losses"></span></h5>
-                <h5>Draw: <span id="draw"></span></h5>
+                <h5 class="heading">Socreboard</h5>
+                <div class="score">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Wins</th>
+                                <th>Losses</th>
+                                <th>Draw</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span id="wins"></span></td>
+                                <td><span id="losses"></span></td>
+                                <td><span id="draw"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
-            </div>
+
         </div>
 
 

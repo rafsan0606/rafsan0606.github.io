@@ -45,29 +45,29 @@ function startGame(playerInput) {
         computerMove = 'Scissors'
     }
 
-    document.querySelector('#computer-pick').textContent = computerMove;
-    document.querySelector('#player-pick').textContent = playerMove;
+    document.querySelector('#computer-pick').src = `./assets/${computerMove}.png`
+    document.querySelector('#player-pick').src = `./assets/${playerMove}.png`;
 
 
     if (playerMove == 'Rock' && computerMove == 'Paper') {
-    result = `Computer won`;
+    result = `Computer Wins!`;
     } else if (playerMove == 'Rock' && computerMove == 'Scissors') {
-        result = `Player won`;
+        result = `You Win!`;
     } else if (playerMove == 'Paper' && computerMove == 'Rock') {
-        result = `Player won`;
+        result = `You Win!`;
     } else if (playerMove == 'Paper' && computerMove == 'Scissors') {
-        result = `Computer won`;
+        result = `Computer Wins!`;
     } else if (playerMove == 'Scissors' && computerMove == 'Rock') {
-        result = `Computer won`;
+        result = `Computer Wins!`;
     } else if (playerMove == 'Scissors' && computerMove == 'Paper') {
-        result = `Player won`;
+        result = `You Win!`;
     } else {
         result = `It's a draw!`;
     }
 
-    if (result == `Player won`) {
+    if (result == `You Win!`) {
         score.wins += 1;
-    } else if (result == `Computer won`) {
+    } else if (result == `Computer Wins!`) {
         score.losses += 1;
     } else {
         score.draw += 1;
@@ -83,5 +83,8 @@ function resetScore() {
     score.losses = 0;
     score.draw = 0;
     updateScore();
+    document.querySelector('#computer-pick').src = ``
+    document.querySelector('#player-pick').src = ``;
+    document.querySelector('#result-text').textContent = "Ready to play?"
 }
 
