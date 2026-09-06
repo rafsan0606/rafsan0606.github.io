@@ -1,8 +1,27 @@
 
 @media screen and (max-width: 956px) {
-    body {
-        zoom: 0.8;
+
+    .move {
+        width: 100px !important;
     }
+
+    .pick-button {
+        width: 105px !important;
+    }
+
+    table {
+        width: 320px !important;
+    }
+
+    h2.title {
+        font-size: 25px !important;
+        text-align: left;
+    }
+
+    .hero-container .col-1 {
+    flex: 0 !important;
+}
+
 }
 
 body {
