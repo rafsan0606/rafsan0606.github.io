@@ -1,4 +1,10 @@
 
+@media screen and (max-width: 956px) {
+    body {
+        zoom: 0.8;
+    }
+}
+
 body {
     font-family: 'Fredoka', sans-serif;
     display: flex;
@@ -55,7 +61,7 @@ h4#result-text, h5.direction-text {
     flex-direction: column;
     justify-content: center;
     background: #fffdf9;
-    width: 767px;
+    width: 630px;
     padding: 20px;
     border-radius: 20px;
     border: 1px solid #ffe5a4;
@@ -292,8 +298,3 @@ table thead {
   animation: entryRightToLeft 0.25s ease-in forwards;
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        zoom: 2;
-    }
-}
