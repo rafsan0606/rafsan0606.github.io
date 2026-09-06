@@ -1,6 +1,6 @@
 
 body {
-    font-family: sans-serif;
+    font-family: 'Fredoka', sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -9,11 +9,42 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    font-weight: 500;
 }
-.heading {
-    font-size: 18px;
+
+h2.title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #644700;
+}
+
+.direction-text, .score-table-text {
     text-align: center;
 }
+
+.direction-text {
+    font-size: 20px;
+}
+
+.score-table-text {
+    font-size: 18px;
+    color: #946a00;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+h2.vs-text {
+    font-size: 36px;
+    font-weight: 500;
+    color: #946a00;
+}
+
+h4#result-text, h5.direction-text {
+    text-align: center;
+    font-size: 22px;
+    color: #946a00;
+}
+
 .container {
     display: flex;
     gap: 60px;
@@ -24,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     justify-content: center;
     background: #fffdf9;
-    width: 540px;
+    width: 767px;
     padding: 20px;
     border-radius: 20px;
     border: 1px solid #ffe5a4;
@@ -67,10 +98,13 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 10px;
     gap: 5px;
     background: #ffffff;
-    border: 1px solid #efefef;
-    box-shadow: 0px 2px 0px 0px #dfdfdf;
+    border: 1px solid #eeebe1;
+    box-shadow: 0px 2px 0px 0px #e7e3d3;
     cursor: pointer;
     transition: ease-out 0.1s;
+    font-size: 14px;
+    font-family: 'Fredoka';
+    color: #946a00;
 }
 
 .reset-button:hover {
@@ -88,10 +122,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .reset-button img {
     height: 20px;
-}
-
-h4#result-text {
-    text-align: center;
 }
 
 .result {
@@ -119,6 +149,15 @@ h4#result-text {
     filter: brightness(0) invert(1);
 }
 
+img#player-pick {
+    transform: scaleY(-1) rotate(90deg);
+}
+
+img#computer-pick {
+    transform: rotate(-90deg);
+}
+
+
 .move h5 {
     color: #fff;
 }
@@ -141,17 +180,20 @@ h4#result-text {
 
 .pick-button {
     display: flex;
-    width: 110px;
+    width: 115px;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     padding: 10px;
     background: #ffffff;
-    border: 1px solid #efefef;
+    border: 1px solid #eeebe1;
     border-radius: 15px;
-    box-shadow: 0px 3px 0px 0px #dfdfdf;
+    box-shadow: 0px 3px 0px 0px #e7e3d3;
     cursor: pointer;
     transition: ease-out 0.1s;
+    font-size: 15px;
+    font-family: 'Fredoka';
+    color: #946a00;
 }
 
 .pick-button:hover {
@@ -182,7 +224,7 @@ h4#result-text {
 }
 
 table {
-    width: 340px;
+    width: 355px;
     background-color: #FFFFFF;
     border-collapse: collapse;
     border-width: 2px;
@@ -197,7 +239,7 @@ table td {
     border-style: solid;
     padding: 5px;
     text-align: center;
-
+    color: #946a00;
 }
 
 table th {
@@ -207,8 +249,51 @@ table th {
     padding: 5px;
     text-align: center;
     color: #ffffff;
+    font-weight: 500;
 }
 
 table thead {
     background-color: #ffc023;
+}
+
+@keyframes entryLeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px) scaleY(-1) rotate(90deg);
+  }
+  30% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scaleY(-1) rotate(90deg);
+  }
+}
+
+.animate-entry-player {
+  animation: entryLeftToRight 0.25s ease-in forwards;
+}
+
+@keyframes entryRightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) rotate(-90deg);
+  }
+  30% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(-90deg);
+  }
+}
+
+.animate-entry-computer {
+  animation: entryRightToLeft 0.25s ease-in forwards;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        zoom: 2;
+    }
 }

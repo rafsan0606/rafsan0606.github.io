@@ -33,6 +33,20 @@ function getRandomMove() {
     return Math.floor(Math.random() * 3);
 }
 
+function handlePlayerAnimation() {
+    const icon = document.querySelector('#player-pick');
+    icon.classList.remove('animate-entry-player');
+    void icon.offsetWidth;
+    icon.classList.add('animate-entry-player');
+}
+
+function handleComputerAnimation() {
+    const icon = document.querySelector('#computer-pick');
+    icon.classList.remove('animate-entry-computer');
+    void icon.offsetWidth;
+    icon.classList.add('animate-entry-computer');
+}
+
 function startGame(playerInput) {
     playerMove = playerInput;
 
@@ -75,6 +89,10 @@ function startGame(playerInput) {
 
     document.querySelector('#result-text').innerText = result;
     saveScore();
+
+    handlePlayerAnimation();
+    handleComputerAnimation();
+
 }
 
 function resetScore() {
@@ -87,4 +105,3 @@ function resetScore() {
     document.querySelector('#player-pick').src = ``;
     document.querySelector('#result-text').textContent = "Ready to play?"
 }
-

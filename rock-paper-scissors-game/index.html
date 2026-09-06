@@ -2,6 +2,9 @@
     <head>
         <title>Rock - Paper - Scissors</title>
         <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="game-container">
@@ -9,7 +12,7 @@
                 <div class="col-1">
                 </div>
                 <div class="col-2">
-                    <h2>Rock - Paper - Scissors</h2>
+                    <h2 class="title">Rock - Paper - Scissors</h2>
                 </div>
                 <div class="col-3">
                     <button onclick="resetScore()" class="reset-button">
@@ -21,14 +24,14 @@
             <div class="move-container">
                 <div class="move">
                     <img src="" alt="" id="player-pick" class="show-picked-icon">
-                    <h5>You</h5>
+                    <h5 class="move-text">You</h5>
                 </div>
                 <div class="vs-container">
-                    <h2>VS</h2>
+                    <h2 class="vs-text">VS</h2>
                 </div>
                 <div class="move">
                     <img src="" alt="" id="computer-pick" class="show-picked-icon">
-                    <h5>Computer</h5>
+                    <h5 class="move-text">Computer</h5>
                 </div>
             </div>
 
@@ -45,10 +48,10 @@
 
             </div>
 
-            <h5 class="heading">Pick a move</h5>
+            <h5 class="direction-text">Pick a move</h5>
 
             <div class="score-container">
-                <h5 class="heading">Socreboard</h5>
+                <h5 class="score-table-text">Socreboard</h5>
                 <div class="score">
                     <table>
                         <thead>
